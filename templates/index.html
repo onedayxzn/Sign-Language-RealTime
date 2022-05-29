@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- my style -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!--logo tittle -->
+    <link rel="icon" href="{{ url_for('static', filename='css/images/small logo icon.png') }}" type="image/icon">
+
+    <title>Peduli Sayangi</title>
+  </head>
+  <body>
+    
+   <!-- navigation -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-transparent position-fixed w-100">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="{{ url_for('static', filename='css/images/small logo icon.png') }}" alt="" width="30" class="d-inline-block align-text-top me-2">
+            Peduli Sayangi
+        </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item mx-2 ">
+            <a class="nav-link active" aria-current="page" href="#">BERANDA</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#">FITUR</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#">LAYANAN</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--Hero Section-->
+  <section id="hero">
+    <div class="container h-100">
+      <div class="row" h-100>
+        <div class="col-md-6 hero-tagline my-auto">
+          <h1>Membantu  Mengenal  Informasi Sign Language</h1>
+          <p><span class="fw-bold">Peduli Sayangi</span> hadir guna membantu kamu berlatih dan mengenal macam - macam Sign Language berdasarkan kamus SIBI</p>
+
+          <button class="button-lg-primary">Yuk Kenalan</button>
+          <a href="#">
+            <img src="{{ url_for('static', filename='css/icon/bi_arrow-right-circle.png') }} " alt="">
+          </a>
+        </div>
+      </div>
+
+      <img src="{{ url_for('static', filename='css/images/hero banner small .png') }}" alt="" class="position-absolute end-0 bottom-0 img-hero">
+
+    </div>
+  </section>
+
+  <!--Fitur Layanan Section-->
+  <section id="layanan">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2> Fitur dan Layanan Kami </h2>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-md-4 text-center">
+          <div class="card-layanan">
+            <div class="circle-icon position-relative mx-auto">
+              <img src="{{ url_for('static', filename='css/images/live prediction.png') }}" alt="live prediction" class="position-absolute top-50 start-50 translate-middle">
+            </div>
+            <h3 class="mt-4">Live Prediction</h3>
+            <p class="mt-2">Kami menyediakan analisis sign language secara realtime melalui kamera  </p>
+          </div>
+        </div>
+
+        <div class="col-md-4 text-center">
+        <div class="card-layanan">
+          <div class="circle-icon position-relative mx-auto">
+            <img src="{{ url_for('static', filename='css/images/hype dictionary.png') }}" alt="hype dictionary" class="position-absolute top-50 start-50 translate-middle">
+          </div>
+          <h3 class="mt-4">Base Dictionary</h3>
+          <p class="mt-2">Terdapat Kamus - kamus galery berisikan sign language dasar </p>
+        </div>
+      </div>
+  
+    
+      <div class="col-md-4 text-center">
+        <div class="card-layanan">
+          <div class="circle-icon position-relative mx-auto">
+            <img src="{{ url_for('static', filename='css/images/informasi masa kini.png') }}" alt="informasi masa kini" class="position-absolute top-50 start-50 translate-middle">
+          </div>
+          <h3 class="mt-4">Informasi Masa Kini</h3>
+          <p class="mt-2">Seputar informasi - informasi terkini dan tambahan ilmu  </p>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--Live Predict Section-->
+  <section id="liveprediction">
+    <div class="container" >
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2>Live Prediction</h2>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-md-12 ">
+            <div>
+              <img class="card-live-predict" src="{{ url_for('video_feed') }}"
+            />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+    <!--Base Dictionary-->
+  <section id="basedictionary">
+    <div class="container bd ">
+      <div class="row mb-5 mt-5">
+        <div class="col-12 text-center">
+          <h2>Base Dictionary</h2>
+        </div>
+      </div>
+        <div class="card-base pt-5 pb-5 p-lg-5 ">
+          <div class="row mb-5">
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="{{ url_for('static', filename='css/images/abjad/A.png') }}" alt="" class="img-dictionary" >
+                <div class="card-body">
+                  <h4>Huruf A</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="{{ url_for('static', filename='css/images/abjad/B.png') }}" alt="" class="img-dictionary">
+                <div class="card-body">
+                  <h4>Huruf B</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/C.png" alt="" class="img-dictionary">
+                <div class="card-body">
+                  <h4>Huruf C</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/D.png" alt="" class="img-dictionary">
+                <div class="card-body">
+                  <h4>Huruf D</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row mb-5">
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/E.png" alt="" class="img-dictionary" >
+                <div class="card-body">
+                  <h4>Huruf E</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/F.png" alt="" class="img-dictionary">
+                <div class="card-body">
+                  <h4>Huruf F</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/G.png" alt="" class="img-dictionary">
+                <div class="card-body">
+                  <h4>Huruf G</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/H.png" alt="" class="img-dictionary">
+                <div class="card-body">
+                  <h4>Huruf H</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row mb-5">
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/I.png" alt="" class="img-dictionary" >
+                <div class="card-body">
+                  <h4>Huruf I</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/J.png" alt="" class="img-dictionary">
+                <div class="card-body">
+                  <h4>Huruf J</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/K.png" alt="" class="img-dictionary">
+                <div class="card-body">
+                  <h4>Huruf K</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/L.png" alt="" class="img-dictionary">
+                <div class="card-body">
+                  <h4>Huruf L</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row mb-5">
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/M.png" alt="" class="img-dictionary" >
+                <div class="card-body">
+                  <h4>Huruf M</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/N.png" alt="" class="img-dictionary">
+                <div class="card-body">
+                  <h4>Huruf N</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/O.png" alt="" class="img-dictionary">
+                <div class="card-body">
+                  <h4>Huruf O</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/P.png" alt="" class="img-dictionary">
+                <div class="card-body">
+                  <h4>Huruf P</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row mb-5">
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/Q.png" alt="" class="img-dictionary" >
+                <div class="card-body">
+                  <h4>Huruf Q</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/R.png" alt="" class="img-dictionary">
+                <div class="card-body">
+                  <h4>Huruf R</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/S.png" alt="" class="img-dictionary">
+                <div class="card-body">
+                  <h4>Huruf S</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/T.png" alt="" class="img-dictionary">
+                <div class="card-body">
+                  <h4>Huruf T</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row mb-5">
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/V.png" alt="" class="img-dictionary" >
+                <div class="card-body">
+                  <h4>Huruf V</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/W.png" alt="" class="img-dictionary">
+                <div class="card-body">
+                  <h4>Huruf W</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/X.png" alt="" class="img-dictionary">
+                <div class="card-body">
+                  <h4>Huruf X</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/Y.png" alt="" class="img-dictionary">
+                <div class="card-body">
+                  <h4>Huruf Y</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row mb-5">
+            <div class="col-3">
+              <div class="card text-center p-2" style="width:15rem">
+                <img src="css/images/abjad/Z.png" alt="" class="img-dictionary" >
+                <div class="card-body">
+                  <h4>Huruf Z</h4>
+                  <p>Berdasarkan kamus SIBI</p>
+                </div>
+              </div>
+            </div>
+
+        </div>
+    </div>
+  </section>
+
+
+  <!-- Informasi Section-->
+  <section id="informasi">
+    <div class="container mb-5 mt-5">
+      <div class="col-12 text-center">
+        <h2>Informasi Masa Kini</h2>
+      </div>
+
+      <div class="row p-5" id="Sign-Langugae">
+        <div class="col justify-content-center text mt-5 pt-5">
+          <h2 class="heading-handlanguage" >Hand Sign Language </h2>
+          <p class="informasi-handlanguage ">Bahasa Isyarat adalah bahasa yang mengutamakan komunikasi manual, bahasa tubuh, dan gerak bibir, bukannya suara, untuk berkomunikasi. Orang tuli adalah kelompok utama yang menggunakan bahasa ini, biasanya dengan mengkombinasikan bentuk tangan, orientasi dan gerak tangan, lengan, dan tubuh, serta ekspresi wajah untuk mengungkapkan pikiran mereka.</p>
+        </div>
+      </div>  
+
+            <div class=row>
+              <div class="row p-5 text-center">
+                <div class="row text-center mb-2" >
+                  <div class="col judul" style="color: white;">
+                        <h2>Jenis - Jenis Kamus yang digunakan di Indonesia</h2>
+                        <p>Di Indonesia sendiri terdapat 2 kamus bahasa isyarat yang sering digunakan </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                  <img src="css/images/small logo icon.png" class="bd-placeholder-img rounded-circle type"width="140" height="140" alt="">
+            
+                    <h2>BISINDO</h2>
+                    <p> Bahasa isyarat ini lah yang sering ditemukan di kalangan Teman Tuli maupun Teman Inklusi pengguna bahasa isyarat. BISINDO dibentuk oleh kelompok Tuli dan muncul secara alami berdasarkan pengamatan Teman Tuli. Maka dari itu, BISINDO memiliki variasi “dialek” di berbagai daerah. BISINDO disampaikan dengan gerakan dua tangan </p>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-6">
+                  <img src="css/images/small logo icon.png" class="bd-placeholder-img rounded-circle type"width="140" height="140" alt="">
+            
+                    <h2>SIBI</h2>
+                    <p> Sistem isyarat ini dibentuk oleh mantan kepala SLB yang merupakan orang dengar. SIBI diadopsi dari Bahasa Isyarat Amerika. SIBI telah diresmikan pemerintah, namun lebih sering digunakan pada pembelajaran di SLB. SIBI dianggap lebih sulit karena mengandung kosakata yang baku dan rumit, serta memiliki awalan dan akhiran.  Berbeda dengan BISINDO, SIBI disampaikan dengan satu tangan. (RYR/SKS)</p>
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+          </div>
+
+    </div>
+  </section>
+
+
+
+ 
+
+
+  
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

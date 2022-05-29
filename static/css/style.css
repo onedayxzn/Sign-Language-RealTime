@@ -1,0 +1,219 @@
+:root {
+    --pr-color : #FBBC41;
+}
+
+body {
+    font-family: 'Kameron', serif;
+    background-color: #FFF9ED;
+}
+
+/*navbar style*/
+.navbar{
+  z-index: 3; 
+}
+*{
+    z-index: 2;
+}
+.navbar-brand{
+    font-weight: 700;
+    font-size: 20px;
+    
+}
+.nav-link{
+    font-size: 16px;
+}
+.nav-link.active{
+    font-weight: 700;
+}
+
+/*hero section*/
+
+#hero{
+    background: linear-gradient(160deg,var(--pr-color),#FFF9ED);
+    height: 100vh;
+    width: 100%;
+}
+.img-hero{
+    height: 100%;
+    z-index: 1;
+}
+
+
+.hero-tagline h1{
+    color: #fff;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 72px;
+    margin-top: 150px;
+   
+}
+
+.hero-tagline p{
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 60px;
+    margin-top: 20px;
+    line-height: 30px;
+    width: 85%;
+}
+
+.button-lg-primary{
+    width: 240px;
+    height: 60px;
+    background-color: #fff;
+    color: var(--pr-color);
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+/*layanan section*/
+
+#layanan {
+    padding: 100px 0;
+}
+
+h2 {
+    font-size: 48px;
+    font-weight: 500;
+    color: var(--pr-color);
+}
+
+.card-layanan {
+    width: 100%;
+    height: 380px;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.05);
+    transition: all .2s ease-in;
+}
+
+.circle-icon {
+    width: 120px;
+    height: 120px;
+    background-color: var(--pr-color);
+    border-radius: 50%;
+    transition: all .1s ease-in;
+}
+
+.card-layanan h3 {
+    color: var(--pr-color);
+    font-size: 30px;
+    transition: all .2s ease-in;
+}
+
+.card-layanan p {
+    color: #000;
+    font-size: 15px;
+    transition: all .3s ease-in;
+}
+
+/*kondisi hover*/
+
+.card-layanan:hover {
+    width: 100%;
+    height: 380px;
+    border-radius: 5px;
+    background: linear-gradient(160deg,#FED687,var(--pr-color));
+    padding: 30px;
+    box-shadow: 0 0 07px 3px rgba(0, 0, 0, 0.05);
+    transition: all .2s ease-in;
+}
+
+.circle-icon:hover {
+    width: 120px;
+    height: 120px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: all .1s ease-in;
+}
+
+.card-layanan:hover h3 {
+    color: #fff;
+    font-size: 30px;
+    transition: all .2s ease-in;
+}
+
+.card-layanan:hover p{
+    color: #000;
+    font-size: 15px;
+    transition: all .3s ease-in;
+}
+
+/* Live Predict */
+#liveprediction {
+    padding: 100px 0;
+    background: linear-gradient(180deg,#FFF9ED,var(--pr-color));
+    height: 100vh;
+    width: 100%;
+}
+
+.card-live-predict {
+    width: 100%;
+    height: 380px;
+    border-radius: 5px;
+    /* background-color: #fff; */
+    padding: 30px;
+    box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.05) 
+}
+
+/*BaseDictionary Section*/
+
+#basedictionary{
+    height: max-content;
+    width: 100%;
+}
+
+.card {
+    height: 350px;
+    border:none;
+}
+
+.card-base{
+    background:linear-gradient(180deg,#FFF9ED,var(--pr-color));
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    height: auto;
+}
+
+.img-dictionary{
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+
+}
+
+.card-body h4{
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 0.8rem;
+}
+
+.card-body p{
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.card:hover {
+    background: linear-gradient(180deg,#FFF9ED,var(--pr-color),#FED687);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    transition: all ease-in-out .3s;
+}
+
+.card:hover .card-body h4{
+    color: #FFF9ED;
+    transition: all ease-in-out .3s;
+}
+
+.card:hover .card-body p{
+    color: #FFF9ED;
+    transition: all ease-in-out .3s;
+}
+
+/*informasi*/
+
+#informasi{
+    
+}
