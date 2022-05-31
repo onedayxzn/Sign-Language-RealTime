@@ -11,7 +11,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
 # buat instance flask
-app = Flask(__name__, template_folder='./template')  # instantiate Flask
+app = Flask(__name__,)
 
 
 camera = cv2.VideoCapture(0)
@@ -117,57 +117,97 @@ def segment_hand(frame, threshold=25):
         return (thresholded, hand_segment_max_cont)
 
 
-def start_model(frame):
-    while True:
-        ret, frame = cam.read()
-        frame = cv2.flip(frame, 1)
-        frame_copy = frame.copy()
+# def start_model(frame):
+#     while True:
+#         ret, frame = cam.read()
+#         frame = cv2.flip(frame, 1)
+#         frame_copy = frame.copy()
 
-        # ROI
-        roi = frame[ROI_top:ROI_bottom, ROI_left:ROI_right]
-        gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
-        gray = cv2.GaussianBlur(gray, (7, 7), 0)
+#         # ROI
+#         roi = frame[ROI_top:ROI_bottom, ROI_right:ROI_left]
+#         gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
+#         gray = cv2.GaussianBlur(gray, (7, 7), 0)
 
-        if num_frames < 70:
-            cal_accum_avg(gray, accumulated_weight)
+#         if num_frames < 70:
+#             cal_accum_avg(gray, accumulated_weight)
 
-            cv2.putText(frame_copy, "FETCHING BACKGROUND...PLEASE WAIT",
-                        (80, 400), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2)
+#             cv2.putText(frame_copy, "FETCHING BACKGROUND...PLEASE WAIT",
+#                         (80, 400), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2)
 
-        else:
-            hand = segment_hand(gray)
-            if hand is not None:
-                thresholded, hand_segment = hand
+#         else:
+#             hand = segment_hand(gray)
+#             if hand is not None:
+#                 thresholded, hand_segment = hand
 
-                # Drawing contours around hand segment
-                cv2.drawContours(frame_copy, [hand_segment + (ROI_right,
-                                                              ROI_top)], -1, (255, 0, 0), 1)
-                cv2.imshow("Thresholded", thresholded)
-                thresholded = cv2.resize(thresholded, (160, 160))
-                thresholded = cv2.cvtColor(thresholded, cv2.COLOR_BGR2GRAY)
-                thresholded = np.reshape(
-                    thresholded, ((1, thresholded.shape[0], thresholded.shape[1], 3)))
+#                 # Drawing contours around hand segment
+#                 cv2.drawContours(frame_copy, [hand_segment + (ROI_right,
+#                                                               ROI_top)], -1, (255, 0, 0), 1)
+#                 cv2.imshow("Thresholded", thresholded)
+#                 thresholded = cv2.resize(thresholded, (160, 160))
+#                 thresholded = cv2.cvtColor(thresholded, cv2.COLOR_BGR2GRAY)
+#                 thresholded = np.reshape(
+#                     thresholded, ((1, thresholded.shape[0], thresholded.shape[1], 3)))
 
-                pred = model.predict(thresholded)
-                cv2.putText(frame_copy, word_dict1[np.argmax(pred)],
-                            (170, 45), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+#                 pred = model.predict(thresholded)
+#                 cv2.putText(frame_copy, word_dict1[np.argmax(pred)],
+#                             (170, 45), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
 
-        # draw roi
-        cv2.rectangle(frame_copy, (ROI_left, ROI_top),
-                      (ROI_right, ROI_bottom), (255, 128, 0), 3)
-        num_frames += 1
+#         # draw roi
+#         cv2.rectangle(frame_copy, (ROI_left, ROI_top),
+#                       (ROI_right, ROI_bottom), (255, 128, 0), 3)
+#         num_frames += 1
 
-        # display frame
-        cv2.putText(frame_copy, "DataFlair hand sign recognition_ _ _",
-                    (50, 50), cv2.FONT_ITALIC, 0.5, (51, 255, 51), 1)
-        cv2.imshow("Sign Detection", frame_copy)
+#         # display frame
+#         cv2.putText(frame_copy, "DataFlair hand sign recognition_ _ _",
+#                     (50, 50), cv2.FONT_ITALIC, 0.5, (51, 255, 51), 1)
+#         cv2.imshow("Sign Detection", frame_copy)
 
 
-def gen_frames():
+def sign_frames():
     while True:
         success, frame = camera.read()  # read the camera frame
         if success:
-            frame = start_model(frame)
+            while True:
+                ret, frame = cam.read()
+                frame = cv2.flip(frame, 1)
+                frame_copy = frame.copy()
+
+                # ROI
+                roi = frame[ROI_top:ROI_bottom, ROI_right:ROI_left]
+                gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
+                gray = cv2.GaussianBlur(gray, (7, 7), 0)
+
+                if num_frames < 70:
+                    cal_accum_avg(gray, accumulated_weight)
+
+                    cv2.putText(frame_copy, "FETCHING BACKGROUND...PLEASE WAIT",
+                                (80, 400), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2)
+
+                else:
+                    hand = segment_hand(gray)
+                    if hand is not None:
+                        thresholded, hand_segment = hand
+                        # Drawing contours around hand segment
+                        cv2.drawContours(frame_copy, [hand_segment + (ROI_right,
+                                                      ROI_top)], -1, (255, 0, 0), 1)
+                        cv2.imshow("Thresholded", thresholded)
+                        thresholded = cv2.resize(thresholded, (160, 160))
+                        thresholded = cv2.cvtColor(
+                            thresholded, cv2.COLOR_BGR2GRAY)
+                        thresholded = np.reshape(
+                            thresholded, ((1, thresholded.shape[0], thresholded.shape[1], 3)))
+                        pred = model.predict(thresholded)
+                        cv2.putText(frame_copy, word_dict1[np.argmax(pred)],
+                                    (170, 45), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+                # draw roi
+                cv2.rectangle(frame_copy, (ROI_left, ROI_top),
+                              (ROI_right, ROI_bottom), (255, 128, 0), 3)
+                num_frames += 1
+
+                # display frame
+                cv2.putText(frame_copy, "DataFlair hand sign recognition_ _ _",
+                            (50, 50), cv2.FONT_ITALIC, 0.5, (51, 255, 51), 1)
+                cv2.imshow("Sign Detection", frame_copy)
         try:
             ret, buffer = cv2.imencode('.jpg', frame)
             frame = buffer.tobytes()
@@ -179,7 +219,7 @@ def gen_frames():
 
 @app.route('/video_feed')
 def video_feed():
-    return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
+    return Response(sign_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 if __name__ == '__main__':
