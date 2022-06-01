@@ -15,8 +15,10 @@
 
     <!-- my style -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!--my responsive-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
     <!--logo tittle -->
-    <link rel="icon" href="{{ url_for('static', filename='css/images/small logo icon.png') }}" type="image/icon">
+    <link rel="icon" href="{{ url_for('static', filename='images/small logo icon.png') }}" type="image/icon">
 
     <title>Peduli Sayangi</title>
   </head>
@@ -26,7 +28,7 @@
    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent position-fixed w-100">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="{{ url_for('static', filename='css/images/small logo icon.png') }}" alt="" width="30" class="d-inline-block align-text-top me-2">
+            <img src="{{ url_for('static', filename='images/small logo icon.png') }}" alt="" width="30" class="d-inline-block align-text-top me-2">
             Peduli Sayangi
         </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,13 +37,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item mx-2 ">
-            <a class="nav-link active" aria-current="page" href="#">BERANDA</a>
+            <a class="nav-link active" aria-current="page" href="#hero">BERANDA</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link" href="#">FITUR</a>
+            <a class="nav-link" href="#layanan">FITUR</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link" href="#">LAYANAN</a>
+            <a class="nav-link" href="#informasi">LAYANAN</a>
           </li>
         </ul>
       </div>
@@ -58,12 +60,12 @@
 
           <button class="button-lg-primary">Yuk Kenalan</button>
           <a href="#">
-            <img src="{{ url_for('static', filename='css/icon/bi_arrow-right-circle.png') }} " alt="">
+            <img src="{{ url_for('static', filename='icon/bi_arrow-right-circle.pn') }}g" alt="">
           </a>
         </div>
       </div>
 
-      <img src="{{ url_for('static', filename='css/images/hero banner small .png') }}" alt="" class="position-absolute end-0 bottom-0 img-hero">
+      <img src="{{ url_for('static', filename='images/hero banner small .png') }}" alt="" class="position-absolute end-0 bottom-0 img-hero">
 
     </div>
   </section>
@@ -81,7 +83,7 @@
         <div class="col-md-4 text-center">
           <div class="card-layanan">
             <div class="circle-icon position-relative mx-auto">
-              <img src="{{ url_for('static', filename='css/images/live prediction.png') }}" alt="live prediction" class="position-absolute top-50 start-50 translate-middle">
+              <img src="{{ url_for('static', filename='images/live prediction.png') }}" alt="live prediction" class="position-absolute top-50 start-50 translate-middle">
             </div>
             <h3 class="mt-4">Live Prediction</h3>
             <p class="mt-2">Kami menyediakan analisis sign language secara realtime melalui kamera  </p>
@@ -91,7 +93,7 @@
         <div class="col-md-4 text-center">
         <div class="card-layanan">
           <div class="circle-icon position-relative mx-auto">
-            <img src="{{ url_for('static', filename='css/images/hype dictionary.png') }}" alt="hype dictionary" class="position-absolute top-50 start-50 translate-middle">
+            <img src="{{ url_for('static', filename='images/hype dictionary.png') }}" alt="hype dictionary" class="position-absolute top-50 start-50 translate-middle">
           </div>
           <h3 class="mt-4">Base Dictionary</h3>
           <p class="mt-2">Terdapat Kamus - kamus galery berisikan sign language dasar </p>
@@ -102,7 +104,7 @@
       <div class="col-md-4 text-center">
         <div class="card-layanan">
           <div class="circle-icon position-relative mx-auto">
-            <img src="{{ url_for('static', filename='css/images/informasi masa kini.png') }}" alt="informasi masa kini" class="position-absolute top-50 start-50 translate-middle">
+            <img src="{{ url_for('static', filename='images/informasi masa kini.png') }}" alt="informasi masa kini" class="position-absolute top-50 start-50 translate-middle">
           </div>
           <h3 class="mt-4">Informasi Masa Kini</h3>
           <p class="mt-2">Seputar informasi - informasi terkini dan tambahan ilmu  </p>
@@ -123,8 +125,9 @@
 
         <div class="row mt-5">
           <div class="col-md-12 ">
-            <div>
-              <img class="card-live-predict" src="{{ url_for('video_feed') }}"
+            <div class="card-live-predict">
+              <img class="camera-live-predict"
+              src="{{ url_for('video_feed') }}"
             />
             </div>
           </div>
@@ -136,7 +139,7 @@
 
     <!--Base Dictionary-->
   <section id="basedictionary">
-    <div class="container bd ">
+    <div class="container ">
       <div class="row mb-5 mt-5">
         <div class="col-12 text-center">
           <h2>Base Dictionary</h2>
@@ -144,9 +147,9 @@
       </div>
         <div class="card-base pt-5 pb-5 p-lg-5 ">
           <div class="row mb-5">
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1  d-flex justify-content-evenly">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="{{ url_for('static', filename='css/images/abjad/A.png') }}" alt="" class="img-dictionary" >
+                <img src="{{ url_for('static', filename='images/abjad/A.png') }}" alt="" class="img-dictionary" >
                 <div class="card-body">
                   <h4>Huruf A</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -154,9 +157,9 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="{{ url_for('static', filename='css/images/abjad/B.png') }}" alt="" class="img-dictionary">
+                <img src="{{ url_for('static', filename='images/abjad/B.png') }}" alt="" class="img-dictionary">
                 <div class="card-body">
                   <h4>Huruf B</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -164,9 +167,9 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/C.png" alt="" class="img-dictionary">
+                <img src="{{ url_for('static', filename='images/abjad/C.png') }}" alt="" class="img-dictionary">
                 <div class="card-body">
                   <h4>Huruf C</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -174,9 +177,9 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/D.png" alt="" class="img-dictionary">
+                <img src="{{ url_for('static', filename='images/abjad/D.png') }}" alt="" class="img-dictionary">
                 <div class="card-body">
                   <h4>Huruf D</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -187,9 +190,9 @@
           </div>
 
           <div class="row mb-5">
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/E.png" alt="" class="img-dictionary" >
+                <img src="{{ url_for('static', filename='images/abjad/E.png') }}" alt="" class="img-dictionary" >
                 <div class="card-body">
                   <h4>Huruf E</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -197,9 +200,9 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/F.png" alt="" class="img-dictionary">
+                <img src="{{ url_for('static', filename='images/abjad/F.png') }}" alt="" class="img-dictionary">
                 <div class="card-body">
                   <h4>Huruf F</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -207,9 +210,9 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/G.png" alt="" class="img-dictionary">
+                <img src="{{ url_for('static', filename='images/abjad/G.png') }}" alt="" class="img-dictionary">
                 <div class="card-body">
                   <h4>Huruf G</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -217,9 +220,9 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/H.png" alt="" class="img-dictionary">
+                <img src="{{ url_for('static', filename='images/abjad/H.png') }}" alt="" class="img-dictionary">
                 <div class="card-body">
                   <h4>Huruf H</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -230,9 +233,9 @@
           </div>
 
           <div class="row mb-5">
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/I.png" alt="" class="img-dictionary" >
+                <img src="{{ url_for('static', filename='images/abjad/I.png') }}" alt="" class="img-dictionary" >
                 <div class="card-body">
                   <h4>Huruf I</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -240,9 +243,9 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/J.png" alt="" class="img-dictionary">
+                <img src="{{ url_for('static', filename='images/abjad/J.png') }}" alt="" class="img-dictionary">
                 <div class="card-body">
                   <h4>Huruf J</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -250,9 +253,9 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/K.png" alt="" class="img-dictionary">
+                <img src="{{ url_for('static', filename='images/abjad/K.png') }}" alt="" class="img-dictionary">
                 <div class="card-body">
                   <h4>Huruf K</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -260,9 +263,9 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/L.png" alt="" class="img-dictionary">
+                <img src="{{ url_for('static', filename='images/abjad/L.png') }}" alt="" class="img-dictionary">
                 <div class="card-body">
                   <h4>Huruf L</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -273,9 +276,9 @@
           </div>
 
           <div class="row mb-5">
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/M.png" alt="" class="img-dictionary" >
+                <img src="{{ url_for('static', filename='images/abjad/M.png') }}" alt="" class="img-dictionary" >
                 <div class="card-body">
                   <h4>Huruf M</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -283,9 +286,9 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/N.png" alt="" class="img-dictionary">
+                <img src="{{ url_for('static', filename='images/abjad/N.png') }}" alt="" class="img-dictionary">
                 <div class="card-body">
                   <h4>Huruf N</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -293,9 +296,9 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/O.png" alt="" class="img-dictionary">
+                <img src="{{ url_for('static', filename='images/abjad/O.png') }}" alt="" class="img-dictionary">
                 <div class="card-body">
                   <h4>Huruf O</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -303,9 +306,9 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/P.png" alt="" class="img-dictionary">
+                <img src="{{ url_for('static', filename='images/abjad/P.png') }}" alt="" class="img-dictionary">
                 <div class="card-body">
                   <h4>Huruf P</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -316,9 +319,9 @@
           </div>
 
           <div class="row mb-5">
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/Q.png" alt="" class="img-dictionary" >
+                <img src="{{ url_for('static', filename='images/abjad/Q.png') }}" alt="" class="img-dictionary" >
                 <div class="card-body">
                   <h4>Huruf Q</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -326,9 +329,9 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/R.png" alt="" class="img-dictionary">
+                <img src="{{ url_for('static', filename='images/abjad/R.png') }}" alt="" class="img-dictionary">
                 <div class="card-body">
                   <h4>Huruf R</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -336,9 +339,9 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/S.png" alt="" class="img-dictionary">
+                <img src="{{ url_for('static', filename='images/abjad/S.png') }}" alt="" class="img-dictionary">
                 <div class="card-body">
                   <h4>Huruf S</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -346,9 +349,9 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/T.png" alt="" class="img-dictionary">
+                <img src="{{ url_for('static', filename='images/abjad/T.png') }}" alt="" class="img-dictionary">
                 <div class="card-body">
                   <h4>Huruf T</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -359,9 +362,9 @@
           </div>
 
           <div class="row mb-5">
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/V.png" alt="" class="img-dictionary" >
+                <img src="{{ url_for('static', filename='images/abjad/V.png') }}" alt="" class="img-dictionary" >
                 <div class="card-body">
                   <h4>Huruf V</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -369,9 +372,9 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/W.png" alt="" class="img-dictionary">
+                <img src="{{ url_for('static', filename='images/abjad/W.png') }}" alt="" class="img-dictionary">
                 <div class="card-body">
                   <h4>Huruf W</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -379,9 +382,9 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/X.png" alt="" class="img-dictionary">
+                <img src="{{ url_for('static', filename='images/abjad/X.png') }}" alt="" class="img-dictionary">
                 <div class="card-body">
                   <h4>Huruf X</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -389,9 +392,9 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/Y.png" alt="" class="img-dictionary">
+                <img src="{{ url_for('static', filename='images/abjad/Y.png') }}" alt="" class="img-dictionary">
                 <div class="card-body">
                   <h4>Huruf Y</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -401,10 +404,10 @@
 
           </div>
 
-          <div class="row mb-5">
-            <div class="col-3">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 mb-1 d-flex justify-content-evenly ">
               <div class="card text-center p-2" style="width:15rem">
-                <img src="css/images/abjad/Z.png" alt="" class="img-dictionary" >
+                <img src="{{ url_for('static', filename='images/abjad/Z.png') }}" alt="" class="img-dictionary" >
                 <div class="card-body">
                   <h4>Huruf Z</h4>
                   <p>Berdasarkan kamus SIBI</p>
@@ -420,46 +423,67 @@
   <!-- Informasi Section-->
   <section id="informasi">
     <div class="container mb-5 mt-5">
-      <div class="col-12 text-center">
+      <div class="col-12 text-center pt-2 mt-5">
         <h2>Informasi Masa Kini</h2>
       </div>
 
-      <div class="row p-5" id="Sign-Langugae">
-        <div class="col justify-content-center text mt-5 pt-5">
-          <h2 class="heading-handlanguage" >Hand Sign Language </h2>
+      <div class="row p-5 d-flex justify-content-center" id="Sign-Langugae">
+        <div class="col justify-content-center text pt-5">
+          <h2 class="heading-handlanguage " >Hand Sign Language </h2>
           <p class="informasi-handlanguage ">Bahasa Isyarat adalah bahasa yang mengutamakan komunikasi manual, bahasa tubuh, dan gerak bibir, bukannya suara, untuk berkomunikasi. Orang tuli adalah kelompok utama yang menggunakan bahasa ini, biasanya dengan mengkombinasikan bentuk tangan, orientasi dan gerak tangan, lengan, dan tubuh, serta ekspresi wajah untuk mengungkapkan pikiran mereka.</p>
         </div>
       </div>  
 
-            <div class=row>
-              <div class="row p-5 text-center">
-                <div class="row text-center mb-2" >
-                  <div class="col judul" style="color: white;">
-                        <h2>Jenis - Jenis Kamus yang digunakan di Indonesia</h2>
-                        <p>Di Indonesia sendiri terdapat 2 kamus bahasa isyarat yang sering digunakan </p>
-                    </div>
+          <div class=row>
+            <div class="row p-5 text-center">
+              <div class="row text-center mb-2" >
+                <div class="col judul" style="color: white;">
+                      <h2>Jenis - Jenis Kamus yang digunakan di Indonesia</h2>
+                      <p>Di Indonesia sendiri terdapat 2 kamus bahasa isyarat yang sering digunakan </p>                    </div>
                 </div>
                 <div class="col-lg-6">
-                  <img src="css/images/small logo icon.png" class="bd-placeholder-img rounded-circle type"width="140" height="140" alt="">
+                  <img src="{{ url_for('static', filename='images/small logo icon.png') }}" class="bd-placeholder-img rounded-circle type"width="140" height="140" alt="">
             
                     <h2>BISINDO</h2>
                     <p> Bahasa isyarat ini lah yang sering ditemukan di kalangan Teman Tuli maupun Teman Inklusi pengguna bahasa isyarat. BISINDO dibentuk oleh kelompok Tuli dan muncul secara alami berdasarkan pengamatan Teman Tuli. Maka dari itu, BISINDO memiliki variasi “dialek” di berbagai daerah. BISINDO disampaikan dengan gerakan dua tangan </p>
-                </div><!-- /.col-lg-4 -->
+                </div><!-- /.col-lg-6 -->
                 <div class="col-lg-6">
-                  <img src="css/images/small logo icon.png" class="bd-placeholder-img rounded-circle type"width="140" height="140" alt="">
+                  <img src="{{ url_for('static', filename='images/small logo icon.png') }}" class="bd-placeholder-img rounded-circle type"width="140" height="140" alt="">
             
                     <h2>SIBI</h2>
                     <p> Sistem isyarat ini dibentuk oleh mantan kepala SLB yang merupakan orang dengar. SIBI diadopsi dari Bahasa Isyarat Amerika. SIBI telah diresmikan pemerintah, namun lebih sering digunakan pada pembelajaran di SLB. SIBI dianggap lebih sulit karena mengandung kosakata yang baku dan rumit, serta memiliki awalan dan akhiran.  Berbeda dengan BISINDO, SIBI disampaikan dengan satu tangan. (RYR/SKS)</p>
-                </div><!-- /.col-lg-4 -->
-            </div><!-- /.row -->
-          </div>
-
-    </div>
+                </div><!-- /.col-lg-6 -->
+              </div>
+          </div><!-- /.row -->
+      </div>
   </section>
 
+  <!--Footer-->
+  <footer  class="d-flex align-items-center position-relative">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 d-flex align-items-center justify-content-center">
+            <img src="{{ url_for('static', filename='images/small logo icon.png') }}" class="img-footer" alt="">
+            <a href="#" class="ms-3">Peduli Sayangi</a>
+          </div>
+          <div class="col-md-5 d-flex justify-content-evenly justify-content-center">
+            <a href="#hero">Beranda</a>
+            <a href="#layanan">Fitur</a>
+            <a href="#informasi">Layanan</a>
+          </div>
+        </div>
 
+          <div class="row position-absolute copyright start-50 translate-middle">
+            <div class="col-12">
+              <P class="text-center">Copyright by PeduliSayangi Team 2022</P>
+            </div>
+          </div>
+        </div>
+    </div>
+  </footer>
 
- 
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 
   

@@ -11,6 +11,7 @@ body {
 .navbar{
   z-index: 3; 
 }
+
 *{
     z-index: 2;
 }
@@ -24,6 +25,16 @@ body {
 }
 .nav-link.active{
     font-weight: 700;
+}
+
+/*nabvar color*/
+.navbar-color{
+    background:linear-gradient(160deg,var(--pr-color),#FED687);
+    transition: all ease-in-out 0.3s;
+}
+
+.bg-transparent{
+    transition: all ease-in .3s;
 }
 
 /*hero section*/
@@ -72,6 +83,7 @@ body {
 
 #layanan {
     padding: 100px 0;
+    
 }
 
 h2 {
@@ -145,7 +157,7 @@ h2 {
 /* Live Predict */
 #liveprediction {
     padding: 100px 0;
-    background: linear-gradient(180deg,#FFF9ED,var(--pr-color));
+    background: #FFF9ED;
     height: 100vh;
     width: 100%;
 }
@@ -154,9 +166,17 @@ h2 {
     width: 100%;
     height: 380px;
     border-radius: 5px;
-    /* background-color: #fff; */
-    padding: 30px;
-    box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.05) 
+    background: linear-gradient(180deg,#FFF9ED,var(--pr-color),#FED687,#FFF9ED);
+    padding: 10px;
+    box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+}
+
+.camera-live-predict {
+    width: 60%;
+    height: 100%;
+   
 }
 
 /*BaseDictionary Section*/
@@ -213,7 +233,46 @@ h2 {
 }
 
 /*informasi*/
-
 #informasi{
-    
+    height: max-content;
+    width: 100%;
+
+}
+
+.tagline-informasi{
+    margin: 20px;
+}
+
+
+/*footer*/
+
+footer{
+    width: 100%;
+    height: 270px;
+    background: linear-gradient(180deg,#FFF9ED,var(--pr-color));
+}
+
+footer a{
+    font-family: kmeron;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    color: #fff;
+    text-decoration: none;
+
+}
+
+.img-footer{
+    width: 48px;
+    height: 48px;
+}
+.copyright{
+    bottom: 1%;
+    color: #FFF9ED;
+    font-family: kameron;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
 }
