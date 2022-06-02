@@ -69,8 +69,10 @@ def sign_frames():
     camera = cv2.VideoCapture(0)
     num_frames = 0
     while True:
-        ret, frame = camera.read()
+        success, frame = camera.read()
         frame = cv2.flip(frame, 1)
+        if frame is None:
+            break
         frame_copy = frame.copy()
 
         # ROI
