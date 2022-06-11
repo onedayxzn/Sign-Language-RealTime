@@ -22,11 +22,9 @@ ROI_right = 150
 ROI_left = 350
 num_frames = 0
 
-word_dict = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E', 5: 'F', 6: 'G', 7: 'H', 8: 'I', 9: 'J', 10: 'K', 11: 'L', 12: 'M', 13: 'N', 14: 'O', 15: 'P', 16: 'Q', 17: 'R',
-             18: 'S', 19: 'T', 20: 'U', 21: 'V', 22: 'W', 23: 'X', 24: 'Y', 25: 'Z', 26: '01', 27: '02', 28: '03', 29: '04', 30: '05', 31: '06', 32: '07', 33: '08', 34: '09'}
 
-word_dict1 = {0: '1', 1: '2', 2: '3', 3: '4', 4: '5', 5: '6', 6: '7', 7: '8', 8: '9', 9: 'A', 10: 'B', 11: 'C', 12: 'D', 13: 'E', 14: 'F', 15: 'G', 16: 'H',
-              17: 'I', 18: 'J', 19: 'K', 20: 'L', 21: 'M', 22: 'N', 23: 'O', 24: 'P', 25: 'Q', 26: 'R', 27: 'S', 28: 'T', 29: 'U', 30: 'V', 31: 'W', 32: 'X', 33: 'Y', 34: 'Z'}
+word_dict2 = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E', 5: 'F', 6: 'G', 7: 'H', 8: 'I', 9: 'J', 10: 'K', 11: 'L', 12: 'M',
+              13: 'N', 14: 'O', 15: 'P', 16: 'Q', 17: 'R', 18: 'S', 19: 'T', 20: 'U', 21: 'V', 22: 'W', 23: 'X', 24: 'Y', 25: 'Z'}
 
 
 def cal_accum_avg(frame, accumulated_weight):
@@ -101,14 +99,14 @@ def generate_frames():
                     cv2.drawContours(frame_copy, [hand_segment + (ROI_right,
                                                                   ROI_top)], -1, (255, 0, 0), 1)
 
-                    thresholded = cv2.resize(thresholded, (160, 160))
+                    thresholded = cv2.resize(thresholded, (128, 128))
                     thresholded = cv2.cvtColor(thresholded,
                                                cv2.COLOR_GRAY2RGB)
                     thresholded = np.reshape(thresholded,
                                              (1, thresholded.shape[0], thresholded.shape[1], 3))
 
                     pred = model.predict(thresholded)
-                    cv2.putText(frame_copy, word_dict1[np.argmax(pred)],
+                    cv2.putText(frame_copy, word_dict2[np.argmax(pred)],
                                 (170, 45), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
 
             # Draw ROI on frame_copy
